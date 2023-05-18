@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: fuente-principal;
+  src: url(../../assets/fonts/Akira\ Expanded\ Demo.otf);
+}
+/* Estas cards se basan en un estilado donde el div contenedor tiene overflow: hidden lo que hace que las imagenes no se ajusten
+con el width del contenedor. De esta forma el contenedor queda delgado a la medida buscada y la imagen solo muestra lo que le permite
+el div (como una ventana). La transition es necesaria para darle el tiempo y la suavidad al movimiento. El desplazamiento, solo
+esta dado por un cambio de width al section div. Al aumentar el width del section__div, el mismo pasa de 4% a 20% que es una medida
+armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
+.body-cards {
+  background-size: cover;
+  height: 200%;
+  width: 100%;
+}
+.body-cards .main {
+  width: 100%;
+  height: 100%;
+}
+
+.article {
+  width: 100%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-template-rows: repeat(3, 45%);
+  justify-content: center;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4%;
+}
+
+.section__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 4%;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.6s linear;
+}
+.section__div__img {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.section__div:hover {
+  width: 30%;
+}
+
+/* FLIP CARDS */
+/* Estas tarjetas giratorias se basan en dos elementos (div) que estan superpuestos uno delante del otro. El secreto esta en que cuando
+se hace hover sobre el contenedor padre que tiene la medida total de la imagen la tarjeta gira con transform:rotate. Ademas de eso
+se le indica a la tarjeta frontal que al hacer rotate tenga activo el backface-visiblity:hidden. Esto es para que la parte de atras
+de la imagen frontal no se vea al girar y la tarjeta back-card se vea al frente. El hover funciona correctamente porque el selector
+hacer hover en el contenedor padre y aplica propiedades sobre los contenedores hijos*/
+.section2 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 5% 2%;
+  grid-template-columns: repeat(3, 25.5%);
+  grid-template-rows: repeat(2, 45%);
+}
+
+.section2__div2 {
+  position: relative;
+  height: 100%;
+  border-radius: 2rem;
+  transition: all 0.6s linear;
+}
+.section2__div2__back-card {
+  transform: perspective(400px) rotateY(180deg);
+  position: absolute;
+  height: 100%;
+  width: 89%;
+  background: radial-gradient(circle at center, #747e83 10%, #27313a 100%);
+  border-radius: 1rem;
+  transition: all 0.6s linear;
+  font-family: cursive;
+  font-size: 10px;
+  color: aliceblue;
+  box-shadow: 0 5px 10px black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+  padding: 0 5%;
+}
+.section2__div2__front-card {
+  transform: perspective(400px) rotateY(0deg);
+  backface-visibility: hidden; /* anula la visibilidad trasera de la tarjeta, en este caso de la tarjeta frontal para que cuando termine el giro solo se vea la tarjeta de atras */
+  position: absolute;
+  height: 100%;
+  transition: all 0.6s linear;
+}
+.section2__div2__front-card__img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.section2__div2:hover .section2__div2__front-card {
+  transform: rotateY(181deg);
+}
+
+.section2__div2:hover .section2__div2__back-card {
+  transform: rotateY(360deg);
+}
+
+/* CARDS OPACITY DESDE LATERAL*/
+/* La estrategia es trabajar con un DIV general que hace de contenedor de las tarjetas
+Luego se creaan dos cards/contenedores, uno puede ser la misma imagen. La imagen es un 
+position relative y la back-card es un position absolute con posicion inciail left 100% 
+lo que hace que quede por fuera del contenedor general de las cards hacia la izquierda.
+Esto permite darle a ese contenedor la propiedad inicial de Overflow hidden para que la
+tarjeta back-card no se vea y luego aparezca con hover en position absolute 0%. 
+ El fondo borroso se consigue con filtro:blur */
+.section3 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 5% 2%;
+  grid-template-columns: repeat(3, 25.5%);
+  grid-template-rows: repeat(2, 45%);
+}
+
+.section3__div3 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  transition: all 0.6s linear;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #636060;
+  z-index: 1;
+  display: flex;
+  border: 3px solid #fff;
+}
+.section3__div3__back-card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 100%;
+  border-radius: 1rem;
+  transition: all 0.4s linear;
+  font-family: cursive;
+  font-size: 10px;
+  color: aliceblue;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+  padding: 0 5%;
+  z-index: 2;
+}
+.section3__div3__front-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.6s linear;
+}
+.section3__div3__front-card__img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.section3__div3:hover .section3__div3__back-card {
+  position: absolute;
+  left: 0%;
+}
+
+.section3__div3:hover .section3__div3__front-card {
+  filter: blur(5px);
+}
+
+/* CARDS TEXTO APARECIDO DEL FONDO */
+/* Mismo concepto que las cards anteriores pero se cambia el efecto princiapl de position left
+por un transform scale que esta en 0% al inicion y que con hover se aplica al 100%.
+El fondo borroso se consigue con filtro:blur */
+.section4 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 5% 2%;
+  grid-template-columns: repeat(3, 25.5%);
+  grid-template-rows: repeat(2, 45%);
+}
+
+.section4__div4 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  transition: all 0.6s linear;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #636060;
+  z-index: 1;
+  display: flex;
+  border: 3px solid #fff;
+}
+.section4__div4__back-card {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  transition: all 0.4s linear;
+  font-family: cursive;
+  font-size: 10px;
+  color: aliceblue;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+  padding: 0 5%;
+  z-index: 2;
+  transform: scale(0);
+}
+.section4__div4__front-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.6s linear;
+}
+.section4__div4__front-card__img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.section4__div4:hover .section4__div4__back-card {
+  transform: scale(100%);
+}
+
+.section4__div4:hover .section4__div4__front-card {
+  filter: blur(5px);
+}
+
+/* CARDS - PERSONAJE 3D */
+.section5 {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  padding-left: 10%;
+  gap: 5% 5%;
+  grid-template-columns: repeat(3, 35%);
+  grid-template-rows: repeat(1, 45%);
+}
+
+.section5__div5--b {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 5%;
+}
+
+.section5__div5 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+  z-index: 1;
+}
+.section5__div5__back-card__img {
+  width: 13%;
+  position: absolute;
+  bottom: -8%;
+  left: 22%;
+  opacity: 0%;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.3s linear;
+}
+.section5__div5__back-card__img__vader {
+  width: 13%;
+  position: absolute;
+  bottom: -8%;
+  left: 6%;
+  opacity: 0%;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.3s linear;
+}
+.section5__div5__front-card {
+  /* position: relative;
+  height: 100%;
+  width: 100%; */
+}
+.section5__div5__front-card__img {
+  height: 100%;
+  width: 85%;
+  border-radius: 1rem;
+  opacity: 100%;
+  box-shadow: 0 5px 10px #636060;
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+
+.section5__div5--b:hover .section5__div5__back-card__img {
+  opacity: 100%;
+  position: absolute;
+  bottom: -6%;
+  transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+  transform-origin: bottom-center;
+}
+
+.section5__div5--b:hover .section5__div5__back-card__img__vader {
+  opacity: 100%;
+  position: absolute;
+  bottom: -6%;
+  transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+  transform-origin: bottom-center;
+}
+
+.section5__div5:hover .section5__div5__front-card__img {
+  transform: perspective(1000px) rotateX(30deg) rotateY(-20deg) rotateZ(15deg);
+  box-shadow: 0 40px 20px -20px #636060;
+  filter: blur(2px);
+}
+
+/*# sourceMappingURL=main.css.map */
