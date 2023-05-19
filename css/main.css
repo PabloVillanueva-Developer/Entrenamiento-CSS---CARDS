@@ -26,6 +26,7 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
   background-size: cover;
   height: 200%;
   width: 100%;
+  background-color: #27313a;
 }
 .body-cards .main {
   width: 100%;
@@ -159,7 +160,7 @@ tarjeta back-card no se vea y luego aparezca con hover en position absolute 0%.
   border-radius: 2rem;
   transition: all 0.6s linear;
   overflow: hidden;
-  box-shadow: 0 5px 10px #636060;
+  box-shadow: 0 40px 20px -20px #020202;
   z-index: 1;
   display: flex;
   border: 3px solid #fff;
@@ -172,10 +173,9 @@ tarjeta back-card no se vea y luego aparezca con hover en position absolute 0%.
   border-radius: 1rem;
   transition: all 0.4s linear;
   font-family: cursive;
-  font-size: 10px;
   color: aliceblue;
   text-align: center;
-  font-size: 15px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,7 +226,7 @@ El fondo borroso se consigue con filtro:blur */
   border-radius: 2rem;
   transition: all 0.6s linear;
   overflow: hidden;
-  box-shadow: 0 5px 10px #636060;
+  box-shadow: 0 40px 20px -20px #020202;
   z-index: 1;
   display: flex;
   border: 3px solid #fff;
@@ -238,10 +238,9 @@ El fondo borroso se consigue con filtro:blur */
   border-radius: 1rem;
   transition: all 0.4s linear;
   font-family: cursive;
-  font-size: 10px;
   color: aliceblue;
   text-align: center;
-  font-size: 15px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,6 +297,7 @@ El fondo borroso se consigue con filtro:blur */
   border-radius: 2rem;
   transition: all 0.4s linear;
   z-index: 1;
+  margin-top: 10%;
 }
 .section5__div5__back-card__img {
   width: 13%;
@@ -329,7 +329,7 @@ El fondo borroso se consigue con filtro:blur */
   width: 85%;
   border-radius: 1rem;
   opacity: 100%;
-  box-shadow: 0 5px 10px #636060;
+  box-shadow: 0 40px 20px -20px #020202;
   transition: all 0.3s linear;
   z-index: 1;
 }
@@ -352,7 +352,109 @@ El fondo borroso se consigue con filtro:blur */
 
 .section5__div5:hover .section5__div5__front-card__img {
   transform: perspective(1000px) rotateX(30deg) rotateY(-20deg) rotateZ(15deg);
-  box-shadow: 0 40px 20px -20px #636060;
+  filter: blur(2px);
+}
+
+.section6 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
+  gap: 5% 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 37%);
+  grid-template-rows: repeat(1, 50%);
+  gap: 24%;
+}
+
+.section6__div6--b {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 60%;
+}
+
+.section6__div6 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+  z-index: 1;
+  margin-top: 10%;
+}
+.section6__div6__back-card__img5 {
+  width: 25%;
+  position: absolute;
+  bottom: -31%; /* -8 */
+  left: 65%;
+  opacity: 0%;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.4s linear;
+}
+.section6__div6__back-card__img5__vader5 {
+  width: 25%;
+  position: absolute;
+  bottom: -30%; /* -30 */
+  left: 52%;
+  opacity: 0%;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.4s linear;
+}
+.section6__div6__front-card {
+  position: relative;
+}
+.section6__div6__front-card__img5 {
+  height: 100%;
+  width: 85%;
+  border-radius: 1rem;
+  opacity: 100%;
+  box-shadow: 0 40px 20px -20px #020202;
+  transition: all 0.4s linear;
+  z-index: 1;
+}
+.section6__div6__front-card__img6 {
+  height: 100%;
+  width: 85%;
+  border-radius: 1rem;
+  opacity: 100%;
+  box-shadow: 0 40px 20px -20px #020202;
+  transition: all 0.4s linear;
+  z-index: 1;
+  position: relative;
+  left: -25%;
+}
+
+.section6:hover .section6__div6__back-card__img5 {
+  opacity: 100%;
+  position: absolute;
+  bottom: -27%;
+  transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+  transform-origin: bottom-center;
+}
+
+.section6:hover .section6__div6__back-card__img5__vader5 {
+  opacity: 100%;
+  position: absolute;
+  bottom: -26%;
+  transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+  transform-origin: bottom-center;
+}
+
+.section6:hover .section6__div6__front-card__img5 {
+  transform: perspective(1000px) rotateX(-30deg) rotateY(20deg) rotateZ(-15deg);
+  box-shadow: 0 40px 20px -20px #020202;
+  filter: blur(2px);
+}
+
+.section6:hover .section6__div6__front-card__img6 {
+  transform: perspective(1000px) rotateX(30deg) rotateY(-20deg) rotateZ(15deg);
+  box-shadow: 0 40px 20px -20px #020202;
   filter: blur(2px);
 }
 
