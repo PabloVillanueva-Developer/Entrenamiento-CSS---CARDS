@@ -36,7 +36,6 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     justify-content: center;
     align-items: center;
     gap: 0.4%;
-    
 }
             
 .section__div {
@@ -48,7 +47,6 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
         border-radius: 2rem;
         overflow: hidden;
         transition: all 0.6s linear;
-        
           
             &__img {
             height: 100%;                 
@@ -74,6 +72,7 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
     display: grid;
     justify-content: center;
     align-content: center;
+  
     gap: 5% 2%;
     grid-template-columns: repeat(3, 25.5%);
     grid-template-rows: repeat(2, 45%);
@@ -82,29 +81,37 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
 .section2__div2 {
     position: relative;
     height: 100%;
+    width: 100%;
     border-radius: 2rem;
     transition: all 0.6s linear;
+    display: flex;
+    justify-content: center;
              
     &__back-card {
         transform: perspective(400px) rotateY(180deg);
         position: absolute;
         height: 100%;
-        width: 89%;
+        width: 95%;
+        max-width: 78px;
         background: radial-gradient(circle at center, #747e83 10%, #27313a 100%);
         border-radius: 1rem;
         transition: all 0.6s linear;
         font-family: cursive;
-        font-size: 70%;
-        max-width: 100%;
+        font-size: 0.1%;  
+        
         color:aliceblue;
         box-shadow: 0 5px 10px rgba($color: #00000093, $alpha: 1.0); 
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 10%;
-        padding: 0 5%;
-    
+
+        &__text {     
+            font-size: 5px;
+            padding: 5%;        
+        }
     }
     
     &__front-card {
@@ -113,8 +120,7 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
         position: absolute;
         height: 100%;
         transition: all 0.6s linear;
-        
-       
+      
         &__img {
             height: 100%;
             width: 100%;  
@@ -147,9 +153,11 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
         display: grid;
         justify-content: center;
         align-content: center;
+        justify-items: center;
         gap: 5% 2%;
         grid-template-columns: repeat(3, 25.5%);
         grid-template-rows: repeat(2, 45%);
+       
     }
     
     .section3__div3 {
@@ -161,8 +169,8 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
         overflow: hidden;
         box-shadow: 0 40px 20px -20px rgba($color: #02020262, $alpha: 1.0);
         z-index: 1;
-        display: flex;
         border: 3px solid #fff;
+        max-width: 100px;
                    
         &__back-card {
             height: 100%;
@@ -180,7 +188,7 @@ hacer hover en el contenedor padre y aplica propiedades sobre los contenedores h
             justify-content: center;
             gap: 10%;
             padding: 0 5%;
-            z-index: 2;
+            z-index: 2;  
         }
         
         &__front-card {
@@ -220,6 +228,8 @@ El fondo borroso se consigue con filtro:blur */
         display: grid;
         justify-content: center;
         align-content: center;
+        align-items: center;
+        justify-items: center;
         gap: 5% 2%;
         grid-template-columns: repeat(3, 25.5%);
         grid-template-rows: repeat(2, 45%);
@@ -236,6 +246,8 @@ El fondo borroso se consigue con filtro:blur */
         z-index: 1;
         display: flex;
         border: 3px solid #fff;
+        max-width: 100px;
+    
                    
         &__back-card {
             height: 100%;
@@ -289,11 +301,10 @@ El fondo borroso se consigue con filtro:blur */
         display: grid;
         justify-content:space-around; 
         align-content: center;
-        
+        justify-items: center;
         gap: 5% 5%;
         grid-template-columns: repeat(2, 40%);
-        grid-template-rows: repeat(1, 60%);
-        
+        grid-template-rows: repeat(1, 60%); 
     }
     
     .section5__div5--b {
@@ -303,6 +314,7 @@ El fondo borroso se consigue con filtro:blur */
         width: 100%;
         height: 100%;
         gap: 5%;
+        max-width: 150px;
     }
 
     .section5__div5 {
@@ -314,40 +326,38 @@ El fondo borroso se consigue con filtro:blur */
         z-index: 1;
         display: flex;
         justify-content: center;
-    
+        justify-items: center;
 
-        &__back-card {      
+        &__back-card {     
+            position: relative; 
           
             &__img {
-                width: 13%;
+                width: 35%;
                 position: absolute;
-                bottom: -8%;
-                left: 22%;
+                bottom: -32%;
                 opacity: 0%;
                 z-index: 2;
                 pointer-events: none;
                 transition: all 0.3s linear;
+                display: flex;
+                max-width: 150px;
             
                 &__vader {
-                    width: 13%;
+                    width: 35%;
                     position: absolute;
-                    bottom: -8%;
-                    left: 6%;
+                    bottom: -32%;
                     opacity: 0%;
                     z-index: 2;
                     pointer-events: none;
                     transition: all 0.3s linear;
+                    max-width: 150px;
+                    display: flex;
                 }
             }
         }
         
         &__front-card {
-            /* position: relative;
-            height: 100%;
-            width: 100%; */
-            
-
-
+          
             &__img {
                 height: 100%;
                 width: 85%;  
@@ -356,8 +366,6 @@ El fondo borroso se consigue con filtro:blur */
                 box-shadow: 0 40px 20px -20px rgba($color: #02020262, $alpha: 1.0);
                 transition: all 0.3s linear;
                 z-index: 1;
-               
-                
             }  
         }
     } 
@@ -365,7 +373,7 @@ El fondo borroso se consigue con filtro:blur */
     .section5__div5--b:hover .section5__div5__back-card__img {
         opacity: 100%;
         position: absolute;
-        bottom: -6%;
+        bottom: -28.5%;
         transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
         transform-origin: bottom-center;
     }
@@ -373,10 +381,9 @@ El fondo borroso se consigue con filtro:blur */
     .section5__div5--b:hover .section5__div5__back-card__img__vader {
         opacity: 100%;
         position: absolute;
-        bottom: -6%;
+        bottom: -29%;
         transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
         transform-origin: bottom-center;
-    
     }
 
     .section5__div5:hover .section5__div5__front-card__img{
@@ -385,33 +392,27 @@ El fondo borroso se consigue con filtro:blur */
         filter: blur(2px);
     }
 
-
-   
-
-
     .section6 {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center; 
         align-content: center;
+        
         gap: 5% 5%;
         display: grid;
         justify-content: space-around;
         grid-template-columns: repeat(2, 37%);
         grid-template-rows: repeat(1,50%);
-
-     
-        
+        justify-items: center;
     }
     
     .section6__div6--b {
         display: flex;
-        justify-content: center;
-        align-content: center;
+        justify-content: end;
         width: 100%;
         height: 100%;
-        
+        max-width: 100px; 
     }
 
     .section6__div6 {
@@ -423,42 +424,39 @@ El fondo borroso se consigue con filtro:blur */
         z-index: 1;
         display: flex;
         justify-content: center;
+        max-width: 130px;
         
-       
-       
-
         &__back-card {   
 
-          
             &__img5 {
-                width: 25%;
+                width: 80%;
                 position: absolute;
-                bottom: -31%; /* -8 */
-                left: 65%;
-                
-                opacity: 0%;
+                bottom: -65%; 
+                left: 38%;
+                opacity: 100%;
                 z-index: 2;
                 pointer-events: none;
                 transition: all 0.4s linear;
+                max-width: 170px;
+                display: flex;
+                justify-content: center;
             
                 &__vader5 {
-                    width: 25%;
+                    width: 70%;
                     position: absolute;
-                    bottom: -30%;/* -30 */
-                    left: 52%;
-                    opacity: 0%;
+                    bottom: -65%;
+                    left: 4%;
+                    opacity: 100%;
                     z-index: 2;
                     pointer-events: none;
                     transition: all 0.4s linear;
+                    max-width: 170px;
                 }
             }
         }
         
         &__front-card {
             position: relative;
-
-            
-
 
             &__img5 {
                 height: 120%;
@@ -468,8 +466,6 @@ El fondo borroso se consigue con filtro:blur */
                 box-shadow: 0 40px 20px -20px rgba($color: #02020262, $alpha: 1.0);
                 transition: all 0.4s linear;
                 z-index: 1;
-                
-              
             }  
 
             &__img6 {
@@ -489,7 +485,7 @@ El fondo borroso se consigue con filtro:blur */
     .section6:hover .section6__div6__back-card__img5 {
         opacity: 100%;
         position: absolute;
-        bottom: -27%;
+        bottom: -63%;
         transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
         transform-origin: bottom-center;
     }
@@ -497,7 +493,7 @@ El fondo borroso se consigue con filtro:blur */
     .section6:hover .section6__div6__back-card__img5__vader5  {
         opacity: 100%;
         position: absolute;
-        bottom: -26%;
+        bottom: -63%;
         transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
         transform-origin: bottom-center;
     }
@@ -514,12 +510,82 @@ El fondo borroso se consigue con filtro:blur */
         filter: blur(2px);
     }
 
-    
-
 }
     
+/* TABLETA Y FULLSREEN */
+@media (min-width:750px) {
+    
+    .article {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 35%);
+    gap: 1%;
+    justify-content: center;
+    justify-items: center;
+    }
 
-  
+    .section3__div3 {
+
+        max-width: 110px; 
+    }
+
+    .section4__div4 {
+     
+        max-width: 110px;
+        }
+
+        .section5__div5--b {
+            max-width: 150px;
+        }
+    
+        .section5__div5 {  
+
+            &__back-card {     
+                position: relative;
+              
+                &__img {
+                    width: 400%;
+                    bottom: 5%;
+                    opacity: 0%;
+                    z-index: 2;
+                    pointer-events: none;
+                    transition: all 0.3s linear;
+                    display: flex;
+                    max-width: 150px;
+                
+                    &__vader {
+                        width: 35%;
+                        position: absolute;
+                        bottom: 5%;
+                        opacity: 0%;
+                        z-index: 2;
+                        pointer-events: none;
+                        transition: all 0.3s linear;
+                        max-width: 150px;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    
+    .section5__div5--b:hover .section5__div5__back-card__img {
+        opacity: 100%;
+        position: absolute;
+        bottom: 7%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
+    }
+
+    .section5__div5--b:hover .section5__div5__back-card__img__vader {
+        opacity: 100%;
+        position: absolute;
+        bottom: 7%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
+    
+    }
+}
+   
  
 
 
