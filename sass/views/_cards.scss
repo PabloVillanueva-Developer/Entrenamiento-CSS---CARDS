@@ -4,6 +4,8 @@ el div (como una ventana). La transition es necesaria para darle el tiempo y la 
 esta dado por un cambio de width al section div. Al aumentar el width del section__div, el mismo pasa de 4% a 20% que es una medida
 armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
 
+
+/* CUDRANTE RESPONSIVE A */
 @media (min-width:320px) and (min-height:320px)  {
 
 .body-cards {
@@ -390,12 +392,12 @@ El fondo borroso se consigue con filtro:blur */
 
         filter: blur(2px);
     }
-    
-
-    
+               
 }
     
-/* TABLETA Y FULLSREEN */
+/* RESPONSIVE */
+
+/* CUADRANTE B */
 @media (min-width:750px) and (min-height:320px) {
     
     .article {
@@ -408,209 +410,197 @@ El fondo borroso se consigue con filtro:blur */
     }
 
     .section2__div2 {
-                 
+                
         &__back-card {
-           
+        
             max-width: 108px;
         }
     
-}
+    }
 
-.section5__div5 {
+    .section5__div5 {
 
-    &__back-card {     
-    
-      
-        &__img {
-            width: 35%;
-            position: absolute;
-            bottom: -75%;
-            opacity: 0%;
-            max-width: 150px;
+        &__back-card {     
         
-            &__vader {
+        
+            &__img {
                 width: 35%;
                 position: absolute;
                 bottom: -75%;
                 opacity: 0%;
                 max-width: 150px;
+            
+                &__vader {
+                    width: 35%;
+                    position: absolute;
+                    bottom: -75%;
+                    opacity: 0%;
+                    max-width: 150px;
 
+                }
             }
         }
+        
+        &__front-card {
+        
+            &__img {
+                height: 100%;
+                width: 85%;  
+            }  
+        }
+    } 
+
+    .section5__div5--b:hover .section5__div5__back-card__img {
+        opacity: 100%;
+        position: absolute;
+        bottom: -70%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
     }
-    
-    &__front-card {
-      
-        &__img {
-            height: 100%;
-            width: 85%;  
-        }  
+
+    .section5__div5--b:hover .section5__div5__back-card__img__vader {
+        opacity: 100%;
+        position: absolute;
+        bottom: -70%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
     }
-} 
-
-.section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: -70%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
-.section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: -70%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
-
 
 }
-/*  */
+
+
+/*  CUADRANTE C */
 
 @media (min-width:320px)  and  (min-height:400px){
 
-    .article {
-        display: grid;
-        grid-template-rows: repeat(3, 35%);
-        
-        }
+        .article {
+            display: grid;
+            grid-template-rows: repeat(3, 35%);
+            }
 
-        
-    .section2__div2 {
-                 
-        &__back-card {
-           
-            max-width: 72px;
-        }
-    
-}
+            
+        .section2__div2 {
+                    
+            &__back-card {
+            
+                max-width: 72px;
+            }  
+    }
 
-.section5__div5 {
+    .section5__div5 {
 
-    &__back-card {     
-    
-      
-        &__img {
-            width: 35%;
-            position: absolute;
-            bottom: -60%;
-            opacity: 0%;
-            max-width: 150px;
+        &__back-card {     
         
-            &__vader {
+        
+            &__img {
                 width: 35%;
                 position: absolute;
                 bottom: -60%;
                 opacity: 0%;
                 max-width: 150px;
-
+            
+                &__vader {
+                    width: 35%;
+                    position: absolute;
+                    bottom: -60%;
+                    opacity: 0%;
+                    max-width: 150px;
+                }
             }
         }
-    }
-    
-    &__front-card {
-      
-        &__img {
-            height: 100%;
-            width: 85%;  
-        }  
-    }
-} 
-
-.section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: -57%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
-.section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: -58%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
         
+        &__front-card {
+        
+            &__img {
+                height: 100%;
+                width: 85%;  
+            }  
+        }
+    } 
+
+    .section5__div5--b:hover .section5__div5__back-card__img {
+        opacity: 100%;
+        position: absolute;
+        bottom: -57%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
+    }
+
+    .section5__div5--b:hover .section5__div5__back-card__img__vader {
+        opacity: 100%;
+        position: absolute;
+        bottom: -58%;
+        transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+        transform-origin: bottom-center;
+    }
 
 }
 
-
+/* CUADRANTE D */
 
 @media (min-width:750px)  and  (min-height:400px){
 
     .article {
         display: grid;
         grid-template-rows: repeat(3, 35%);
-        
-        }
+    }
 
         
     .section2__div2 {
                  
         &__back-card {
-           
             max-width: 95px;
         }
-    
-}
+    }
 
-.section5__div5 {
+    .section5__div5 {
 
-    &__back-card {     
-    
-      
-        &__img {
-            width: 35%;
-            position: absolute;
-            bottom: 5%;
-            opacity: 0%;
-            max-width: 150px;
+        &__back-card {     
         
-            &__vader {
+        
+            &__img {
                 width: 35%;
                 position: absolute;
                 bottom: 5%;
                 opacity: 0%;
                 max-width: 150px;
+            
+                &__vader {
+                    width: 35%;
+                    position: absolute;
+                    bottom: 5%;
+                    opacity: 0%;
+                    max-width: 150px;
 
+                }
             }
         }
-    }
-    
-    &__front-card {
-      
-        &__img {
-            height: 100%;
-            width: 85%;  
-        }  
-    }
-} 
-
-.section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: 8%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
-.section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: 8%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-}
-
         
+            &__front-card {
+            
+                &__img {
+                    height: 100%;
+                    width: 85%;  
+                }  
+            }
+    } 
 
+        .section5__div5--b:hover .section5__div5__back-card__img {
+            opacity: 100%;
+            position: absolute;
+            bottom: 8%;
+            transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+            transform-origin: bottom-center;
+        }
 
-    }
+        .section5__div5--b:hover .section5__div5__back-card__img__vader {
+            opacity: 100%;
+            position: absolute;
+            bottom: 8%;
+            transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
+            transform-origin: bottom-center;
+        }
+}
 
 
 
