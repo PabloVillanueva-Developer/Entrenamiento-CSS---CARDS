@@ -26,20 +26,19 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
 @media (min-width: 320px) and (min-height: 320px) {
   .body-cards {
     background-size: cover;
-    height: 200%;
-    width: 100%;
     background-color: #27313a;
   }
   .body-cards .main {
     width: 100%;
     height: 100%;
+    min-height: 1000px;
   }
   .article {
     width: 100%;
-    height: 80%;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(1, 110%);
-    grid-template-rows: repeat(20, 50%);
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(5, 30%);
     justify-content: center;
     position: relative;
   }
@@ -47,16 +46,17 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     width: 100%;
     height: 100%;
     display: flex;
+    justify-items: center;
     justify-content: center;
     align-items: center;
-    gap: 0.4%;
+    gap: 3%;
   }
   .section__div {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60%;
-    width: 4%;
+    width: 9%;
     border-radius: 2rem;
     overflow: hidden;
     transition: all 0.6s linear;
@@ -78,11 +78,11 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     width: 100%;
     height: 100%;
     display: grid;
+    grid-template-columns: repeat(2, 40%);
+    grid-template-rows: repeat(3, 30%);
     justify-content: center;
     align-content: center;
-    gap: 5% 2%;
-    grid-template-columns: repeat(3, 25.5%);
-    grid-template-rows: repeat(2, 45%);
+    gap: 2% 2%;
   }
   .section2__div2 {
     position: relative;
@@ -90,19 +90,17 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     transition: all 0.6s linear;
     display: flex;
     justify-content: center;
-    width: 100%;
     height: 100%;
   }
   .section2__div2__back-card {
     transform: perspective(400px) rotateY(180deg);
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 90px;
     background: radial-gradient(circle at center, #747e83 10%, #27313a 100%);
     border-radius: 1rem;
     transition: all 0.6s linear;
     font-family: cursive;
-    font-size: 0.1%;
     color: aliceblue;
     box-shadow: 0 5px 10px black;
     text-align: center;
@@ -111,10 +109,9 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     justify-content: center;
     align-items: center;
     gap: 10%;
-    max-width: 82px;
   }
   .section2__div2__back-card__text {
-    font-size: 5px;
+    font-size: 4.5px;
     padding: 5%;
   }
   .section2__div2__front-card {
@@ -150,9 +147,9 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     justify-content: center;
     align-content: center;
     justify-items: center;
-    gap: 5% 2%;
-    grid-template-columns: repeat(3, 25.5%);
-    grid-template-rows: repeat(2, 45%);
+    gap: 2% 2%;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 30%);
   }
   .section3__div3 {
     position: relative;
@@ -214,9 +211,9 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     align-content: center;
     align-items: center;
     justify-items: center;
-    gap: 5% 2%;
-    grid-template-columns: repeat(3, 25.5%);
-    grid-template-rows: repeat(2, 45%);
+    gap: 2% 2%;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 30%);
   }
   .section4__div4 {
     position: relative;
@@ -266,7 +263,7 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
   .section4__div4:hover .section4__div4__front-card {
     filter: blur(5px);
   }
-  /* CARDS - PERSONAJE 3D */
+  /*  /* CARDS - PERSONAJE 3D */
   .section5 {
     width: 100%;
     height: 100%;
@@ -274,9 +271,9 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     justify-content: space-around;
     align-content: center;
     justify-items: center;
-    gap: 5% 5%;
+    gap: 2% 2%;
     grid-template-columns: repeat(2, 40%);
-    grid-template-rows: repeat(1, 60%);
+    grid-template-rows: repeat(1, 35%);
   }
   .section5__div5--b {
     display: flex;
@@ -304,9 +301,9 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
   .section5__div5__back-card__img {
     width: 35%;
     position: absolute;
-    bottom: -135%;
     opacity: 0%;
     z-index: 2;
+    bottom: -38%;
     pointer-events: none;
     transition: all 0.3s linear;
     display: flex;
@@ -315,8 +312,8 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
   .section5__div5__back-card__img__vader {
     width: 35%;
     position: absolute;
-    bottom: -135%;
     opacity: 0%;
+    bottom: -38%;
     z-index: 2;
     pointer-events: none;
     transition: all 0.3s linear;
@@ -335,14 +332,14 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
   .section5__div5--b:hover .section5__div5__back-card__img {
     opacity: 100%;
     position: absolute;
-    bottom: -131%;
+    bottom: -37%;
     transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
     transform-origin: bottom-center;
   }
   .section5__div5--b:hover .section5__div5__back-card__img__vader {
     opacity: 100%;
     position: absolute;
-    bottom: -131%;
+    bottom: -37%;
     transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
     transform-origin: bottom-center;
   }
@@ -351,135 +348,47 @@ armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
     filter: blur(2px);
   }
 }
-/* RESPONSIVE */
-/* CUADRANTE B */
-@media (min-width: 750px) and (min-height: 320px) {
-  .article {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(3, 65%);
+@media (min-width: 500px) {
+  .section {
     gap: 1%;
-    justify-content: center;
-    justify-items: center;
   }
-  .section2__div2__back-card {
-    max-width: 108px;
+  .section__div {
+    height: 60%;
+    width: 50px;
   }
-  .section5__div5__back-card__img {
-    width: 35%;
-    position: absolute;
-    bottom: -75%;
-    opacity: 0%;
-    max-width: 150px;
-  }
-  .section5__div5__back-card__img__vader {
-    width: 35%;
-    position: absolute;
-    bottom: -75%;
-    opacity: 0%;
-    max-width: 150px;
-  }
-  .section5__div5__front-card__img {
-    height: 100%;
-    width: 85%;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: -70%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: -70%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
+  .section2 {
+    grid-template-columns: repeat(3, 35%);
+    grid-template-rows: repeat(2, 30%);
   }
 }
-/*  CUADRANTE C */
-@media (min-width: 320px) and (min-height: 400px) {
-  .article {
-    display: grid;
-    grid-template-rows: repeat(3, 35%);
-  }
-  .section2__div2__back-card {
-    max-width: 72px;
-  }
-  .section5__div5__back-card__img {
-    width: 35%;
-    position: absolute;
-    bottom: -60%;
-    opacity: 0%;
-    max-width: 150px;
-  }
-  .section5__div5__back-card__img__vader {
-    width: 35%;
-    position: absolute;
-    bottom: -60%;
-    opacity: 0%;
-    max-width: 150px;
-  }
-  .section5__div5__front-card__img {
-    height: 100%;
-    width: 85%;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: -57%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: -58%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
+@media (min-width: 650px) {
+  .section2 {
+    grid-template-columns: repeat(6, 14%);
+    grid-template-rows: repeat(1, 30%);
   }
 }
-/* CUADRANTE D */
-@media (min-width: 750px) and (min-height: 400px) {
-  .article {
-    display: grid;
-    grid-template-rows: repeat(3, 35%);
+@media (min-width: 750px) {
+  .section2 {
+    grid-template-columns: repeat(6, 14%);
+    grid-template-rows: repeat(1, 30%);
+    max-width: 750px;
+    margin: 0 auto;
   }
   .section2__div2__back-card {
-    max-width: 95px;
+    max-width: 78px;
   }
-  .section5__div5__back-card__img {
-    width: 35%;
-    position: absolute;
-    bottom: 5%;
-    opacity: 0%;
-    max-width: 150px;
+  .section3 {
+    grid-template-columns: repeat(6, 14%);
+    grid-template-rows: repeat(1, 38%);
+    max-width: 750px;
+    margin: 0 auto;
   }
-  .section5__div5__back-card__img__vader {
-    width: 35%;
-    position: absolute;
-    bottom: 5%;
-    opacity: 0%;
-    max-width: 150px;
-  }
-  .section5__div5__front-card__img {
-    height: 100%;
-    width: 85%;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: 8%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: 8%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
+  .section4 {
+    gap: 2% 2%;
+    grid-template-columns: repeat(6, 14%);
+    grid-template-rows: repeat(1, 38%);
+    max-width: 750px;
+    margin: 0 auto;
   }
 }
 
