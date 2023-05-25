@@ -22,373 +22,360 @@ con el width del contenedor. De esta forma el contenedor queda delgado a la medi
 el div (como una ventana). La transition es necesaria para darle el tiempo y la suavidad al movimiento. El desplazamiento, solo
 esta dado por un cambio de width al section div. Al aumentar el width del section__div, el mismo pasa de 4% a 20% que es una medida
 armoniosa y la transition lo suaviza solo tanto de ida como de vuelta */
-/* CUDRANTE RESPONSIVE A */
-@media (min-width: 320px) and (min-height: 320px) {
-  .body-cards {
-    background-size: cover;
-    background-color: #27313a;
-  }
-  .body-cards .main {
-    width: 100%;
-    height: 100%;
-    min-height: 1000px;
-  }
+/* RESPONSIVE*/
+.body {
+  background-size: cover;
+  background-color: #27313a;
+  width: 100vw;
+}
+
+@media (min-width: 320px) {
   .article {
-    width: 100%;
-    height: 100%;
     display: grid;
-    grid-template-columns: repeat(1, 100%);
-    grid-template-rows: repeat(5, 30%);
-    justify-content: center;
-    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 4.5fr 1fr;
+    gap: 2%;
+    margin-top: 0 auto;
   }
-  .section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
-  }
-  .section__div {
+  .section1 {
+    margin: 2% auto 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
-    width: 9%;
-    border-radius: 2rem;
+    height: 350px;
+    width: 100vw;
+    max-width: 300px;
+  }
+  .section1__div {
+    margin: 0 1.2%;
     overflow: hidden;
-    transition: all 0.6s linear;
-  }
-  .section__div__img {
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
     height: 100%;
-    border-radius: 1rem;
+    width: 7%;
+    transition: all 1s ease;
   }
-  .section__div:hover {
-    width: 30%;
+  .section1__div:hover {
+    width: 100%;
   }
-  /* FLIP CARDS */
-  /* Estas tarjetas giratorias se basan en dos elementos (div) que estan superpuestos uno delante del otro. El secreto esta en que cuando
-  se hace hover sobre el contenedor padre que tiene la medida total de la imagen la tarjeta gira con transform:rotate. Ademas de eso
-  se le indica a la tarjeta frontal que al hacer rotate tenga activo el backface-visiblity:hidden. Esto es para que la parte de atras
-  de la imagen frontal no se vea al girar y la tarjeta back-card se vea al frente. El hover funciona correctamente porque el selector
-  hacer hover en el contenedor padre y aplica propiedades sobre los contenedores hijos*/
+  /* LA TARJETA SE LOGRO CREANDO UN CONTENEDOR PRINCIPAL PARA QUE OCUPE POSICION EN EL GRID Y LUEGO UNA IMAGEN (RELATIVE) y UN DIV (RELATIVE)
+  PARA LA TARJETA DE ATRAS. SE POSICIONARON LA TARJETA FRONTAL Y TRASERA CON RELATIVE YA QUE CON ABSOLUTE TODAS LAS TARJETAS DEL GRID SE
+  IBAN A LA MISMA POSICION. CON RELATIVE CADA TARJETA TRASERA TOMO COMO REFERENCIA SU IMAGEN FRONTAL CORRESPONDIENTE */
   .section2 {
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    padding: 5px;
     display: grid;
-    grid-template-columns: repeat(2, 40%);
-    grid-template-rows: repeat(3, 30%);
-    justify-content: center;
-    align-content: center;
-    gap: 2% 2%;
-  }
-  .section2__div2 {
-    position: relative;
-    border-radius: 2rem;
-    transition: all 0.6s linear;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-  }
-  .section2__div2__back-card {
-    transform: perspective(400px) rotateY(180deg);
-    position: absolute;
-    height: 100%;
-    width: 90px;
-    background: radial-gradient(circle at center, #747e83 10%, #27313a 100%);
-    border-radius: 1rem;
-    transition: all 0.6s linear;
-    font-family: cursive;
-    color: aliceblue;
-    box-shadow: 0 5px 10px black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-  }
-  .section2__div2__back-card__text {
-    font-size: 4.5px;
-    padding: 5%;
-  }
-  .section2__div2__front-card {
-    transform: perspective(400px) rotateY(0deg);
-    backface-visibility: hidden; /* anula la visibilidad trasera de la tarjeta, en este caso de la tarjeta frontal para que cuando termine el giro solo se vea la tarjeta de atras */
-    position: absolute;
-    height: 100%;
-    transition: all 0.6s linear;
-  }
-  .section2__div2__front-card__img {
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-  }
-  .section2__div2:hover .section2__div2__front-card {
-    transform: rotateY(181deg);
-  }
-  .section2__div2:hover .section2__div2__back-card {
-    transform: rotateY(360deg);
-  }
-  /* CARDS OPACITY DESDE LATERAL*/
-  /* La estrategia es trabajar con un DIV general que hace de contenedor de las tarjetas
-  Luego se creaan dos cards/contenedores, uno puede ser la misma imagen. La imagen es un 
-  position relative y la back-card es un position absolute con posicion inciail left 100% 
-  lo que hace que quede por fuera del contenedor general de las cards hacia la izquierda.
-  Esto permite darle a ese contenedor la propiedad inicial de Overflow hidden para que la
-  tarjeta back-card no se vea y luego aparezca con hover en position absolute 0%. 
-   El fondo borroso se consigue con filtro:blur */
-  .section3 {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     justify-items: center;
-    gap: 2% 2%;
-    grid-template-columns: repeat(3, 30%);
-    grid-template-rows: repeat(2, 30%);
-  }
-  .section3__div3 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border-radius: 2rem;
-    transition: all 0.6s linear;
-    overflow: hidden;
-    box-shadow: 0 40px 20px -20px #020202;
-    z-index: 1;
-    border: 3px solid #fff;
-    max-width: 100px;
-  }
-  .section3__div3__back-card {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 100%;
-    border-radius: 1rem;
-    transition: all 0.4s linear;
-    font-family: cursive;
-    color: aliceblue;
-    text-align: center;
-    font-size: 10px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 10%;
-    padding: 0 5%;
-    z-index: 2;
+    width: 290px;
+    gap: 2%;
   }
-  .section3__div3__front-card {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    transition: all 0.6s linear;
-  }
-  .section3__div3__front-card__img {
-    height: 100%;
-    width: 100%;
+  .section2__div {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 1rem;
+    opacity: 100%;
+    transition: all 0.5s linear;
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.575);
   }
-  .section3__div3:hover .section3__div3__back-card {
-    position: absolute;
+  .section2__div__frontcard {
+    width: 110px;
+    height: 140px;
+    border-radius: 1rem;
+    opacity: 100%;
+    z-index: 2;
+    position: relative;
+  }
+  .section2__div__backcard {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 1rem;
+    opacity: 100%;
+    transition: all 0.5s linear;
+    z-index: 3;
+    position: relative;
+    bottom: 144px;
+    transform: scale(0%);
+    color: aliceblue;
+    pointer-events: none;
+  }
+  .section2__div__backcard__h3 {
+    font-size: 30px;
+    padding: 7px;
+  }
+  .section2__div__backcard__h3__p {
+    text-align: center;
+    font-size: 15px;
+    padding: 7px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  .section2__div__frontcard:hover ~ .section2__div__backcard {
+    opacity: 100%;
+    z-index: 2;
+    transform: scale(100%);
+    transition: all 0.4s linear;
+  }
+  .section2__div__frontcard:hover {
+    opacity: 30%;
+    transition: all 0.4s linear;
+    filter: grayscale(30%);
+  }
+  /* SECTION 3 - LEFT CARDS*/
+  .section3 {
+    margin: 0 auto;
+    padding: 5px;
+    justify-items: center;
+    width: 290px;
+    gap: 2%;
+  }
+  .section3__div {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1rem;
+    opacity: 100%;
+    transition: all 0.5s linear;
+    overflow: hidden;
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.575);
+  }
+  .section3__div__frontcard {
+    width: 110px;
+    height: 140px;
+    border-radius: 1rem;
+    opacity: 100%;
+    z-index: 2;
+    position: relative;
+  }
+  .section3__div__backcard {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 1rem;
+    opacity: 100%;
+    transition: all 0.5s linear;
+    z-index: 3;
+    position: relative;
+    left: 100%;
+    bottom: 144px;
+    color: aliceblue;
+    pointer-events: none;
+  }
+  .section3__div__backcard__h3 {
+    font-size: 30px;
+    padding: 7px;
+  }
+  .section3__div__backcard__h3__p {
+    text-align: center;
+    font-size: 15px;
+    padding: 7px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  .section3__div__frontcard:hover ~ .section3__div__backcard {
     left: 0%;
   }
-  .section3__div3:hover .section3__div3__front-card {
-    filter: blur(5px);
-  }
-  /* CARDS TEXTO APARECIDO DEL FONDO */
-  /* Mismo concepto que las cards anteriores pero se cambia el efecto princiapl de position left
-  por un transform scale que esta en 0% al inicion y que con hover se aplica al 100%.
-  El fondo borroso se consigue con filtro:blur */
+  /* SECTION 4 - FLIP CARDS */
   .section4 {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    margin: 0 auto;
+    padding: 5px;
     justify-items: center;
-    gap: 2% 2%;
-    grid-template-columns: repeat(3, 30%);
-    grid-template-rows: repeat(2, 30%);
+    width: 290px;
+    gap: 2%;
   }
-  .section4__div4 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border-radius: 2rem;
-    transition: all 0.6s linear;
-    overflow: hidden;
-    box-shadow: 0 40px 20px -20px #020202;
-    z-index: 1;
-    display: flex;
-    border: 3px solid #fff;
-    max-width: 100px;
-  }
-  .section4__div4__back-card {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  .section4__div {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 1rem;
-    transition: all 0.4s linear;
-    font-family: cursive;
+    opacity: 100%;
+    transition: all 0.5s linear;
+  }
+  .section4__div__frontcard {
+    width: 110px;
+    height: 140px;
+    border-radius: 1rem;
+    opacity: 100%;
+    z-index: 3;
+    position: relative;
+    transition: all 0.35s linear;
+  }
+  .section4__div__backcard {
+    width: 110px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.575);
+    border-radius: 1rem;
+    opacity: 100%;
+    transition: all 0.35s linear;
+    z-index: 2;
+    position: relative;
+    bottom: 144px;
     color: aliceblue;
-    text-align: center;
-    font-size: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10%;
-    padding: 0 5%;
-    z-index: 2;
-    transform: scale(0);
-  }
-  .section4__div4__front-card {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    transition: all 0.6s linear;
-  }
-  .section4__div4__front-card__img {
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-  }
-  .section4__div4:hover .section4__div4__back-card {
-    transform: scale(100%);
-  }
-  .section4__div4:hover .section4__div4__front-card {
-    filter: blur(5px);
-  }
-  /*  /* CARDS - PERSONAJE 3D */
-  .section5 {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: space-around;
-    align-content: center;
-    justify-items: center;
-    gap: 2% 2%;
-    grid-template-columns: repeat(2, 40%);
-    grid-template-rows: repeat(1, 35%);
-  }
-  .section5__div5--b {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    gap: 5%;
-    max-width: 150px;
-  }
-  .section5__div5 {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border-radius: 2rem;
-    transition: all 0.4s linear;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-  }
-  .section5__div5__back-card {
-    position: relative;
-  }
-  .section5__div5__back-card__img {
-    width: 35%;
-    position: absolute;
-    opacity: 0%;
-    z-index: 2;
-    bottom: -38%;
+    justify-content: end;
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.575);
     pointer-events: none;
-    transition: all 0.3s linear;
-    display: flex;
-    max-width: 150px;
   }
-  .section5__div5__back-card__img__vader {
-    width: 35%;
-    position: absolute;
-    opacity: 0%;
-    bottom: -38%;
-    z-index: 2;
-    pointer-events: none;
-    transition: all 0.3s linear;
-    max-width: 150px;
-    display: flex;
-  }
-  .section5__div5__front-card__img {
-    height: 100%;
-    width: 85%;
-    border-radius: 1rem;
-    opacity: 100%;
-    box-shadow: 0 40px 20px -20px #020202;
-    transition: all 0.3s linear;
-    z-index: 1;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img {
-    opacity: 100%;
-    position: absolute;
-    bottom: -37%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-  }
-  .section5__div5--b:hover .section5__div5__back-card__img__vader {
-    opacity: 100%;
-    position: absolute;
-    bottom: -37%;
-    transform: perspective(1000px) rotateX(-10deg) rotateZ(-2deg);
-    transform-origin: bottom-center;
-  }
-  .section5__div5:hover .section5__div5__front-card__img {
-    transform: perspective(1000px) rotateX(30deg) rotateY(-20deg) rotateZ(15deg);
-    filter: blur(2px);
+  .section4__div__backcard__h3 {
+    font-size: 25px;
+    padding: 7px;
+    text-align: center;
   }
 }
-@media (min-width: 500px) {
-  .section {
-    gap: 1%;
-  }
-  .section__div {
-    height: 60%;
-    width: 50px;
+.section4__div__frontcard:hover ~ .section4__div__backcard {
+  bottom: 125px;
+}
+
+.section4__div__frontcard:hover {
+  transform: translateY(-19px);
+}
+
+/* SECTION 5 - FLIP CARDS */
+.section5 {
+  margin: 0 auto;
+  padding: 5px;
+  justify-items: center;
+  width: 290px;
+  gap: 2%;
+}
+.section5__div {
+  width: 110px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 1rem;
+  opacity: 100%;
+  transition: all 0.5s linear;
+}
+.section5__div__frontcard {
+  width: 110px;
+  height: 140px;
+  border-radius: 1rem;
+  opacity: 100%;
+  z-index: 3;
+  position: relative;
+  transition: all 0.5s linear;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+.section5__div__backcard {
+  width: 110px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.575);
+  border-radius: 1rem;
+  opacity: 100%;
+  transition: all 0.5s linear;
+  z-index: 2;
+  position: relative;
+  bottom: 144px;
+  color: aliceblue;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.575);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.section5__div__backcard__h3 {
+  font-size: 25px;
+  padding: 7px;
+  text-align: center;
+}
+.section5__div__backcard__h3__p {
+  text-align: center;
+  font-size: 15px;
+  padding: 7px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.section5__div__frontcard:hover ~ .section5__div__backcard {
+  transform: rotateY(360deg);
+}
+
+.section5__div__frontcard:hover {
+  transform: rotateY(180deg);
+}
+
+.section6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  margin: 0 auto;
+  width: 290px;
+  gap: 2%;
+  height: 300px;
+}
+.section6__div {
+  width: 110px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 1rem;
+  opacity: 100%;
+  transition: all 0.5s linear;
+  perspective: 260px;
+  display: flex;
+  justify-content: center;
+}
+.section6__div__frontcard {
+  width: 110px;
+  height: 140px;
+  border-radius: 1rem;
+  opacity: 100%;
+  z-index: 1;
+  transition: all 0.5s linear;
+  position: relative;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.575);
+}
+.section6__div__backcard {
+  width: 110px;
+  height: 140px;
+  border-radius: 1rem;
+  opacity: 0%;
+  transition: all 0.5s linear;
+  z-index: 2;
+  position: absolute;
+  color: aliceblue;
+  transition: all 0.5s linear;
+  bottom: 40px;
+  pointer-events: none;
+}
+
+.section6__div__frontcard:hover ~ .section6__div__backcard {
+  transform: translatey(-20px);
+  opacity: 100%;
+  z-index: 3;
+}
+
+.section6__div__frontcard:hover {
+  transform: rotate3d(1, 0, 0, 40deg) rotate3d(0, 1, 0, -30deg) rotate3d(0, 0, 1, 30deg);
+  filter: blur(2px);
+}
+
+@media (min-width: 600px) {
+  .article {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2fr 1fr;
   }
   .section2 {
-    grid-template-columns: repeat(3, 35%);
-    grid-template-rows: repeat(2, 30%);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 0.1fr);
+    justify-items: center;
+    gap: 4% 9%;
+    max-width: 600px;
   }
 }
-@media (min-width: 650px) {
+@media (min-width: 1100px) {
+  .article {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
   .section2 {
-    grid-template-columns: repeat(6, 14%);
-    grid-template-rows: repeat(1, 30%);
-  }
-}
-@media (min-width: 750px) {
-  .section2 {
-    grid-template-columns: repeat(6, 14%);
-    grid-template-rows: repeat(1, 30%);
-    max-width: 750px;
-    margin: 0 auto;
-  }
-  .section2__div2__back-card {
-    max-width: 78px;
-  }
-  .section3 {
-    grid-template-columns: repeat(6, 14%);
-    grid-template-rows: repeat(1, 38%);
-    max-width: 750px;
-    margin: 0 auto;
-  }
-  .section4 {
-    gap: 2% 2%;
-    grid-template-columns: repeat(6, 14%);
-    grid-template-rows: repeat(1, 38%);
-    max-width: 750px;
-    margin: 0 auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 0.1fr);
+    justify-items: center;
+    gap: 8% 9%;
+    max-width: 600px;
   }
 }
 
